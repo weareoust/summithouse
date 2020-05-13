@@ -1,42 +1,20 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import PageNav from "./PageNav"
+import Logo from "./Logo"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+export default function Header(props) {
+  const currentColor = '#d5593d'
+
+  return (
+    <header className="w-full fixed flex">
+      <div style={{backgroundColor: currentColor}} className="py-6 px-8">
+        <Link to="/">
+          <Logo className="w-full overflow-visible"/>
         </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+      </div>
+      <PageNav/>
+    </header>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header

@@ -8,9 +8,9 @@ export default function Header(props) {
 
   return (
     <header className="w-full fixed flex">
-      <div style={{backgroundColor: currentColor}} className="py-6 px-8">
+      <div style={{backgroundColor: currentColor, maxWidth: "520px"}} className="w-full py-6 px-8">
         <Link to="/">
-          <Logo className="w-full overflow-visible"/>
+          <Logo/>
         </Link>
       </div>
       <PageNav/>

@@ -3,13 +3,13 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { css } from '@emotion/core'
 import Header from "../components/header"
-import Arrow from "../images/Arrow.svg"
 import SHBG from "../images/SH-BG.png"
 import South from "../images/31South.svg"
 import OustLogo from "../images/OUST.svg"
 import Ritual from "../images/Ritual.svg"
 import WPLogo from "../images/Wild Places.svg"
 import WPBG from "../images/WP-BG.png"
+import Arrow from "../components/Arrow"
 
 
 const leadingButtons = ["Production", "Strategy", "Brand Identity"]
@@ -19,15 +19,18 @@ const IndexPage = () => (
     <SEO title="Home" />
     <main className="">
       <Header/>
-      <section className="w-full h-screen bg-no-repeat bg-center bg-cover text-white p-8 pt-24" style={{backgroundImage: `url(${SHBG})`}}>
-        <div className="h-full flex flex-col items-center justify-center lg:mt-24"
+      <section 
+        className="w-full h-screen bg-no-repeat bg-center bg-cover text-white p-8 pt-24 flex flex-col" 
+        style={{backgroundImage: `url(${SHBG})`}}
+      >
+        <div className="h-full flex flex-col items-center justify-center"
           css={css`
             @media screen and (min-width: 1024px) {
               max-width: 70%;
             }
           `
         }>
-          <h1 className="uppercase text-center font-heading lg:text-left text-5xl lg:text-6xl">
+          <h1 className="uppercase text-center font-heading lg:text-left text-5xl lg:text-6xl lg:mb-10">
             We are a <br/> <span className="font-headingItalic normal-case">Family</span> of agencies.
           </h1>
           <div className="w-full flex flex-col lg:flex-row lg:justify-center">
@@ -47,10 +50,10 @@ const IndexPage = () => (
               )
             })}
           </div>
-          <div className="flex flex-col items-center mt-12">
-            <p className="uppercase">Welcome to our House</p>
-            <img src={Arrow} alt="arrow"/>
-          </div>
+        </div>
+        <div className="flex flex-col items-center my-12">
+          <p className="uppercase">Welcome to our House</p>
+          <Arrow color={"#fff"}/>
         </div>
       </section>
       <section className="w-full h-screen bg-white p-8 pt-24">
@@ -67,7 +70,9 @@ const IndexPage = () => (
             >
               Visit 31 South
             </Link>
-            <img className="mt-32" src={Arrow} alt="arrow"/>
+            <div className="mt-32">
+              <Arrow color={"#000"}/>
+            </div>
           </div>
         </div>
       </section>
@@ -85,7 +90,9 @@ const IndexPage = () => (
             >
               Visit Oust
             </Link>
-            <img className="mt-32" src={Arrow} alt="arrow"/>
+            <div className="mt-32">
+              <Arrow color={"#F08D91"}/>
+            </div>
           </div>
         </div>
       </section>
@@ -103,7 +110,9 @@ const IndexPage = () => (
             >
               Visit Ritual
             </Link>
-            <img className="mt-32" src={Arrow} alt="arrow"/>
+            <div className="mt-32">
+              <Arrow color={"#050706"}/>
+            </div>
           </div>
         </div>
       </section>
@@ -121,7 +130,6 @@ const IndexPage = () => (
               >
                 Visit Wild Places
               </Link>
-              <img className="mt-32" src={Arrow} alt="arrow"/>
             </div>
         </div>
       </section>

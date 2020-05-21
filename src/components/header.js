@@ -7,7 +7,7 @@ export default function Header(props) {
   const currentColor = '#d5593d'
 
   return (
-    <header className="w-full fixed flex">
+    <header className="w-full fixed flex z-10">
       <div style={{backgroundColor: currentColor, maxWidth: "540px"}} className="w-full py-6 px-8">
         <Link to="/">
           <Logo/>

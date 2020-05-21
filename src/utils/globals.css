@@ -1,5 +1,25 @@
 @tailwind base;
 
+@font-face {
+	font-family: "Alte Haas Grotesk Bold";
+	src: url(./fonts/AlteHaasGroteskBold.ttf);
+}
+
+@font-face {
+	font-family: "Ogg TRIAL Bold";
+	src: url(./fonts/Ogg-Bold.otf);
+}
+
+@font-face {
+	font-family: "Ogg TRIAL Bold Italic";
+	src: url(./fonts/Ogg-BoldItalic.otf);
+}
+
+html, body {
+  font-family: Helvetica, sans-serif;
+}
+
+
 @tailwind components;
 
 @tailwind utilities;

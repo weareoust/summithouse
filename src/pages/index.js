@@ -107,21 +107,44 @@ const AnimatedBrandSection = animated(BrandSection)
 export default function IndexPage() {
   const index = useRef(0)
   const [props, set] = useSprings(brands.length, i => ({ y: i * window.innerHeight, sc: 1, display: 'block' }))
-  const bind = useGesture(({ down, delta: [, yDelta], direction: [, yDir], distance, cancel }) => {
-    if (down && distance > window.innerHeight / 2)
-      cancel((index.current = clamp(index.current + (yDir > 0 ? -1 : 1), 0, brands.length - 1)))
-    set(i => {
-      if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
-      const y = (i - index.current) * window.innerHeight + (down ? yDelta : 0)
-      const sc = down ? 1 - distance / window.innerHeight / 2 : 1
-      return { y, sc, display: 'block' }
-    })
+  const bind = useGesture({
+    onDrag: ({ down, delta: [, yDelta], direction: [, yDir], distance, cancel }) => {
+      if (down && distance > window.innerHeight / 2)
+        cancel((index.current = clamp(index.current + (yDir > 0 ? -1 : 1), 0, brands.length - 1)))
+      set(i => {
+        if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
+        const y = (i - index.current) * window.innerHeight + (down ? yDelta : 0)
+        const sc = down ? 1 - distance / window.innerHeight / 2 : 1
+        return { y, sc, display: 'block' }
+      })
+    },
+    onWheel: ({ wheeling, distance }) => {
+      set(i => {
+        const sc = wheeling ? 1 - distance / window.innerHeight / 40 : 1
+        return { sc, display: 'block' }
+      })
+    },
+    onWheelStart: ({delta: [, yDelta], direction: [, yDir]}) => {
+      if (index.current === 0) {
+        index.current = index.current + (yDir > 0 ? 1 : 0)
+      } else if (index.current === brands.length - 1) {
+        index.current = index.current + (yDir > 0 ? 0 : -1)
+      } else {
+        index.current = index.current + (yDir > 0 ? 1 : -1)
+      }
+
+      console.log(index.current)
+      set(i => {
+        if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
+        const y = (i - index.current) * window.innerHeight + yDelta
+        return { y, display: 'block' }
+      })
+    }
   })
 
   return (
     <main id="root" className="overflow-hidden fixed inset-0 bg-black"
       css={css`
-        overscroll-behavior-y: contain;
         cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39, auto;
       `}
     >

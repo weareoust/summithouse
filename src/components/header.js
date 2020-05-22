@@ -13,7 +13,7 @@ export default function Header(props) {
           <Logo/>
         </Link>
       </div>
-      <PageNav/>
+      <PageNav setActive={props.setActive} current={props.current}/>
     </header>
   )
 }

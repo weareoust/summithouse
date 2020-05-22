@@ -160,7 +160,7 @@ export default function IndexPage() {
       `}
     >
       <SEO title="Home" />
-      <Header/>
+      <Header setActive={setIndex} current={index.current} />
       {props.map(({ y, display, sc }, i) => (
         <animated.div 
           {...bind()}

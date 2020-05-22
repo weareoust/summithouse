@@ -37,18 +37,6 @@ const brands = [
     dest: 'https://www.weareoust.co/'
   },
   {
-    title: 'Ritual Film Company',
-    background: '#EDE2D9',
-    logo: Ritual,
-    textColor: 'black',
-    children: 'With extensive experience in the commercial and documentary world, Ritual is lead by a nimble team of executive producers to produce authentic, compelling content.',
-    buttonColor: 'white',
-    buttonTextColor: '#050608',
-    buttonText: 'Visit Ritual',
-    arrowColor: '#050608',
-    dest: 'https://www.weareritual.co/'
-  },
-  {
     title: 'Wild Places',
     background: `url(${WPBG}) center`,
     logo: WPLogo,
@@ -59,7 +47,18 @@ const brands = [
     buttonText: 'Visit Wild Places',
     arrowColor: 'black',
     dest: 'https://gotowildplaces.com/'
-  }
+  },
+  {
+    title: 'Ritual Film Company',
+    background: '#EDE2D9',
+    logo: Ritual,
+    textColor: 'black',
+    children: 'With extensive experience in the commercial and documentary world, Ritual is lead by a nimble team of executive producers to produce authentic, compelling content.',
+    buttonColor: 'white',
+    buttonTextColor: '#050608',
+    buttonText: 'Visit Ritual',
+    dest: 'https://www.weareritual.co/'
+  },
 ]
 
 export default brands

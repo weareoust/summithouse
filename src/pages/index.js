@@ -66,6 +66,10 @@ export default function IndexPage() {
     <main id="root" className="overflow-hidden fixed inset-0 bg-black"
       css={css`
         cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39, auto;
+        
+        * {
+          cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39, auto;
+        }
       `}
     >
       <SEO title="Home" />
@@ -82,7 +86,7 @@ export default function IndexPage() {
         >
           <AnimatedBrandSection
             animation={{ transform: sc.interpolate(s => `scale(${s})`), background: brands[i].background}}
-            advance={() => setIndex(index + 1)}
+            advance={setIndex}
             current={index}
             {...brands[i]}
           />

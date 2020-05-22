@@ -44,9 +44,9 @@ export default function BrandSection(props) {
               className="uppercase rounded px-4 py-2 text-bold text-center"
               style={{backgroundColor: props.buttonColor, color: props.buttonTextColor, width: "fit-content"}}
             >{props.buttonText}</a>
-            <button className="mt-32" onClick={props.advance}>
+            {props.arrowColor ? <button className="mt-32" onClick={() => props.advance(props.current + 1)}>
               <Arrow color={props.arrowColor}/>
-            </button>
+            </button> : ''}
           </div>
         </div>
       </animated.section>

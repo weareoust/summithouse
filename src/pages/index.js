@@ -66,6 +66,7 @@ const brands = [
     buttonTextColor: 'white',
     buttonText: 'Visit 31South',
     arrowColor: '#000000',
+    dest: 'https://www.31south.io/'
   },
   {
     title: 'OUST',
@@ -77,6 +78,7 @@ const brands = [
     buttonTextColor: '#F1EDE2',
     buttonText: 'Visit Oust',
     arrowColor: '#F08D91',
+    dest: 'https://www.weareoust.co/'
   },
   {
     title: 'Ritual Film Company',
@@ -88,6 +90,7 @@ const brands = [
     buttonTextColor: '#050608',
     buttonText: 'Visit Ritual',
     arrowColor: '#050608',
+    dest: 'https://www.weareritual.co/'
   },
   {
     title: 'Wild Places',
@@ -99,6 +102,7 @@ const brands = [
     buttonTextColor: '#CAD6C8',
     buttonText: 'Visit Wild Places',
     arrowColor: 'black',
+    dest: 'https://gotowildplaces.com/'
   }
 ]
 
@@ -107,6 +111,14 @@ const AnimatedBrandSection = animated(BrandSection)
 export default function IndexPage() {
   const index = useRef(0)
   const [props, set] = useSprings(brands.length, i => ({ y: i * window.innerHeight, sc: 1, display: 'block' }))
+  const setIndex = newIndex => {
+    index.current = newIndex
+    set(i => {
+      if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
+      const y = (i - index.current) * window.innerHeight
+      return { y, display: 'block' }
+    })
+  }
   const bind = useGesture({
     onDrag: ({ down, delta: [, yDelta], direction: [, yDir], distance, cancel }) => {
       if (down && distance > window.innerHeight / 2)
@@ -133,7 +145,6 @@ export default function IndexPage() {
         index.current = index.current + (yDir > 0 ? 1 : -1)
       }
 
-      console.log(index.current)
       set(i => {
         if (i < index.current - 1 || i > index.current + 1) return { display: 'none' }
         const y = (i - index.current) * window.innerHeight + yDelta
@@ -162,6 +173,7 @@ export default function IndexPage() {
         >
           <AnimatedBrandSection
             animation={{ transform: sc.interpolate(s => `scale(${s})`), background: brands[i].background}}
+            advance={() => setIndex(index.current = index.current + 1)}
             {...brands[i]}
           />
         </animated.div>

@@ -37,14 +37,15 @@ export default function BrandSection(props) {
           <img className="mb-4" src={props.logo} alt={props.title}/>
           <div className="w-full flex flex-col items-center max-w-lg">
             <h2 className="text-center text-lg leading-normal font-normal uppercase" style={{color: props.textColor}}>{props.children}</h2>
-            <Link 
-              to="/"
+            <a 
+              href={props.dest}
+              target="_blank"
               className="uppercase rounded px-4 py-2 text-bold text-center"
               style={{backgroundColor: props.buttonColor, color: props.buttonTextColor, width: "fit-content"}}
-            >{props.buttonText}</Link>
-            <div className="mt-32">
+            >{props.buttonText}</a>
+            <button className="mt-32" onClick={props.advance}>
               <Arrow color={props.arrowColor}/>
-            </div>
+            </button>
           </div>
         </div>
       </animated.section>

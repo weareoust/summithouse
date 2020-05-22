@@ -38,7 +38,7 @@ const brands = [
   },
   {
     title: 'Wild Places',
-    background: `url(${WPBG}) center`,
+    background: `url(${WPBG}) center/cover`,
     logo: WPLogo,
     textColor: 'black',
     children: 'A BRAND IDENTITY COMPANY AND DESIGN STUDIO WITH A FOCUS ON CREATING BOLD, ADVENTUROUS IDENTITIES',

@@ -25,7 +25,7 @@ export default function BrandSection(props) {
     return (
       <animated.section 
         id="1" 
-        className="w-screen h-screen p-8 pt-24"
+        className="w-screen h-screen p-8 md:pt-24 relative w-full"
         style={props.animation}
         css={css`
           will-change: transform;
@@ -34,9 +34,9 @@ export default function BrandSection(props) {
         `}
       >
         <div className="h-full flex flex-col items-center justify-center">
-          <img className="mb-4" src={props.logo} alt={props.title}/>
-          <div className="w-full flex flex-col items-center max-w-lg">
-            <h2 className="text-center text-lg leading-normal font-normal uppercase" style={{color: props.textColor}}>{props.children}</h2>
+          <img className="mb-4 w-2/3 max-w-sm" src={props.logo} alt={props.title}/>
+          <div className="w-full flex flex-col items-center justify-center max-w-lg">
+            <h2 className="text-center text-sm md:text-lg leading-normal font-normal uppercase" style={{color: props.textColor}}>{props.children}</h2>
             <a 
               href={props.dest}
               target="_blank"
@@ -44,7 +44,14 @@ export default function BrandSection(props) {
               className="uppercase rounded px-4 py-2 text-bold text-center"
               style={{backgroundColor: props.buttonColor, color: props.buttonTextColor, width: "fit-content"}}
             >{props.buttonText}</a>
-            {props.arrowColor ? <button className="mt-32" onClick={() => props.advance(props.current + 1)}>
+            {props.arrowColor ? <button 
+              className="mb-20 md:mb-16 absolute bottom-0 flex justify-center" 
+              onClick={() => props.advance(props.current + 1)}
+              css={css`
+                left: 50%;
+                transform: translateX(-50%);
+              `}
+            >
               <Arrow color={props.arrowColor}/>
             </button> : ''}
           </div>

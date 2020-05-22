@@ -22,7 +22,7 @@ export default function IndexPage() {
 
   const bind = useGesture({
     onDrag: ({ down, delta: [, yDelta], direction: [, yDir], distance, cancel }) => {
-      if (down && distance > window.innerHeight / 2)
+      if (down && distance > window.innerHeight / 4)
         cancel(setIndex(clamp(index + (yDir > 0 ? -1 : 1), 0, brands.length - 1)))
       set(i => {
         if (i < index - 1 || i > index + 1) return { display: 'none' }
@@ -58,7 +58,7 @@ export default function IndexPage() {
     set(i => {
       const y = (i - index) * winH
       if (i < index - 1 || i > index + 1) return { y, display: 'none' }
-      return { y, display: 'block' }
+      return { y, sc: 1, display: 'block' }
     })
   },[index, set, winH])
 

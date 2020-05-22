@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Arrow from "../components/Arrow"
 import { css } from "@emotion/core"
 import { animated } from 'react-spring'
@@ -7,6 +6,7 @@ import { animated } from 'react-spring'
 export default function BrandSection(props) {
 
   if (props.altChildren) {
+    const AltChildren = props.altChildren
     return (
       <animated.section 
         id="1" 
@@ -18,7 +18,7 @@ export default function BrandSection(props) {
           user-select: none;
         `}
       >
-        {props.altChildren}
+        <AltChildren setSlide={props.advance} current={props.current} />
       </animated.section>
     )
   } else {
@@ -40,6 +40,7 @@ export default function BrandSection(props) {
             <a 
               href={props.dest}
               target="_blank"
+              rel="noopener noreferrer"
               className="uppercase rounded px-4 py-2 text-bold text-center"
               style={{backgroundColor: props.buttonColor, color: props.buttonTextColor, width: "fit-content"}}
             >{props.buttonText}</a>

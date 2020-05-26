@@ -4,7 +4,7 @@ export default function Logo(props) {
 
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 30" className="w-full overflow-visible">
+    <svg xmlns="http://www.w3.org/2000/svg" fill={props.color} viewBox="0 0 550 30" className="w-full overflow-visible">
       <g id="Layer_2" dataname="Layer 2">
         <g id="Layer_1-2" dataname="Layer 1">
           <g id="mask0">

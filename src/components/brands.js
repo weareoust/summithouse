@@ -10,7 +10,12 @@ const brands = [
   {
     title: 'Summit House',
     background: `url(${SHBG}) center right/cover`,
-    altChildren: SummitHero
+    altChildren: SummitHero,
+    theme: {
+      headerBg: '#D55A3D',
+      headerText: '#D9D9D6',
+      indicator: '#D55A3D'
+    }
   },
   {
     title: '31South',
@@ -22,7 +27,12 @@ const brands = [
     buttonTextColor: 'white',
     buttonText: 'Visit 31South',
     arrowColor: '#000000',
-    dest: 'https://www.31south.io/'
+    dest: 'https://www.31south.io/',
+    theme: {
+      headerBg: '#E5E5E5',
+      headerText: '#000000',
+      indicator: '#DB3832'
+    }
   },
   {
     title: 'OUST',
@@ -34,7 +44,12 @@ const brands = [
     buttonTextColor: '#F1EDE2',
     buttonText: 'Visit Oust',
     arrowColor: '#F08D91',
-    dest: 'https://www.weareoust.co/'
+    dest: 'https://www.weareoust.co/',
+    theme: {
+      headerBg: '#F08D91',
+      headerText: '#2A2A28',
+      indicator: '#F08D91'
+    }
   },
   {
     title: 'Wild Places',
@@ -46,7 +61,12 @@ const brands = [
     buttonTextColor: '#CAD6C8',
     buttonText: 'Visit Wild Places',
     arrowColor: 'black',
-    dest: 'https://gotowildplaces.com/'
+    dest: 'https://gotowildplaces.com/',
+    theme: {
+      headerBg: '#000000',
+      headerText: '#CDD9CC',
+      indicator: '#000000'
+    }
   },
   {
     title: 'Ritual Film Company',
@@ -57,7 +77,12 @@ const brands = [
     buttonColor: 'white',
     buttonTextColor: '#050608',
     buttonText: 'Visit Ritual',
-    dest: 'https://www.weareritual.co/'
+    dest: 'https://www.weareritual.co/',
+    theme: {
+      headerBg: '#FFFFFF',
+      headerText: '#070504',
+      indicator: '#FFFFFF'
+    }
   },
 ]
 

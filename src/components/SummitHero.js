@@ -8,7 +8,7 @@ const leadingButtons = [
     index: 4
   },
   {
-    title: "Strategy",
+    title: "Hyper growth",
     index: 1
   },
   {
@@ -16,7 +16,7 @@ const leadingButtons = [
     index: 3
   },
   {
-    title: " Digital Content",
+    title: "Digital Advertising",
     index: 2
   }
 ]

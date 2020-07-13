@@ -35,12 +35,16 @@ export default function BrandSection(props) {
         `}
       >
         <div className="h-full flex flex-col items-center justify-center">
-          <img
-            className="mb-4 w-2/3 max-w-sm max-h-40"
-            src={props.logo}
-            alt={props.title}
-            style={{ maxHeight: "200px" }}
-          />
+          {props.logo ? (
+            <img
+              className="mb-4 w-2/3 max-w-sm max-h-40"
+              src={props.logo}
+              alt={props.title}
+              style={{ maxHeight: "200px" }}
+            />
+          ) : (
+            ""
+          )}
           <div className="w-full flex flex-col items-center justify-center max-w-lg">
             <h2
               className="text-center text-sm md:text-lg leading-normal font-normal uppercase"

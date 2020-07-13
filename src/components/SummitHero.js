@@ -73,13 +73,13 @@ export default function SummitHero(props) {
           </a>
         </div>
       </div>
-      <button
+      {/* <button
         className="flex flex-col items-center my-12 focus:outline-none"
         onClick={() => props.setSlide(props.current + 1)}
       >
         <p className="uppercase">Welcome to our House</p>
         <Arrow color={"#fff"} />
-      </button>
+      </button> */}
     </div>
   );
 }

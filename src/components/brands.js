@@ -24,7 +24,7 @@ const brands = [
     logo: South,
     textColor: "black",
     children:
-      "31South is a new breed of agency. One lead by veteran entrepreneurs and award winning team members who have not only worked with the biggest brands in the world, but also profoundly know the landscape and nuances of hyper growth.",
+      "31South is a new breed of agency. One led by veteran entrepreneurs and award winning team members who have not only worked with the biggest brands in the world, but also profoundly know the landscape and nuances of hyper growth.",
     buttonColor: "#DB3832",
     buttonTextColor: "white",
     buttonText: "Visit 31South",
@@ -78,7 +78,7 @@ const brands = [
     logo: Ritual,
     textColor: "black",
     children:
-      "With extensive experience in the commercial and documentary world, Ritual is lead by a nimble team of executive producers to produce authentic, compelling content.",
+      "With extensive experience in the commercial and documentary world, Ritual is led by a nimble team of executive producers to produce authentic, compelling content.",
     buttonColor: "white",
     buttonTextColor: "#050608",
     buttonText: "Visit Ritual",

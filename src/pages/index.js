@@ -6,12 +6,13 @@ import clamp from "lodash-es/clamp";
 import { useSprings, animated } from "react-spring";
 import { useGesture } from "react-use-gesture";
 import Header from "../components/header";
-import brands from "../components/brands";
+import useBrandContent from "../components/brands";
 
 const AnimatedBrandSection = animated(BrandSection);
 
 export default function IndexPage() {
   const [index, setIndex] = useState(0);
+  const brands = useBrandContent();
   const winH = typeof window !== "undefined" ? window.innerHeight : 900;
   const [props, set] = useSprings(brands.length, (i) => ({
     y: i * winH,

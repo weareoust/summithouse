@@ -1,27 +1,39 @@
 import React from "react";
 import Arrow from "./Arrow";
 import { css } from "@emotion/core";
-
-const leadingButtons = [
-  {
-    title: "Production",
-    index: 4,
-  },
-  {
-    title: "Hyper growth",
-    index: 1,
-  },
-  {
-    title: "Brand Identity",
-    index: 3,
-  },
-  {
-    title: "Digital Advertising",
-    index: 2,
-  },
-];
+import { useStaticQuery, graphql } from "gatsby";
 
 export default function SummitHero(props) {
+  const content = useStaticQuery(graphql`
+    query HeroQuery {
+      contentfulHomePage(id: { eq: "bae5956e-370f-5adc-ada7-737d4e5cd54b" }) {
+        button1Text
+        button2Text
+        button3Text
+        button4Text
+      }
+    }
+  `);
+
+  const leadingButtons = [
+    {
+      title: content.contentfulHomePage.button1Text,
+      index: 4,
+    },
+    {
+      title: content.contentfulHomePage.button2Text,
+      index: 1,
+    },
+    {
+      title: content.contentfulHomePage.button3Text,
+      index: 3,
+    },
+    {
+      title: content.contentfulHomePage.button4Text,
+      index: 2,
+    },
+  ];
+
   return (
     <div
       className="h-full text-white flex flex-col justify-between"
